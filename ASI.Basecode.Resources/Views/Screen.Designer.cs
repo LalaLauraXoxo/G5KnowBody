@@ -97,6 +97,15 @@ namespace ASI.Basecode.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Let&apos;s get you logged in, shall we?.
+        /// </summary>
+        public static string LetsLoggedIn {
+            get {
+                return ResourceManager.GetString("LetsLoggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string Login {
@@ -115,11 +124,29 @@ namespace ASI.Basecode.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remember Me.
+        /// </summary>
+        public static string RememberMe {
+            get {
+                return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UserId.
         /// </summary>
         public static string UserId {
             get {
                 return ResourceManager.GetString("UserId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome, Admin!.
+        /// </summary>
+        public static string WelcAdmin {
+            get {
+                return ResourceManager.GetString("WelcAdmin", resourceCulture);
             }
         }
     }

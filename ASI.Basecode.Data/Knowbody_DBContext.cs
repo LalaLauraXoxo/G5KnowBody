@@ -6,23 +6,33 @@ using ASI.Basecode.Data.Models;
 
 namespace ASI.Basecode.Data
 {
-    public partial class AsiBasecodeDBContext : DbContext
+    public partial class Knowbody_DBContext : DbContext
     {
-        public AsiBasecodeDBContext()
+        public Knowbody_DBContext()
         {
         }
 
-        public AsiBasecodeDBContext(DbContextOptions<AsiBasecodeDBContext> options)
+        public Knowbody_DBContext(DbContextOptions<Knowbody_DBContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<User> Users { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Addr=DESKTOP-AACGU9T\\SQLEXPRESS; database=Knowbody_DB; Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True");
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasIndex(e => e.UserId, "UQ__Users__1788CC4D5F4A160F")
+                entity.HasIndex(e => e.UserId, "UQ__Users__1788CC4D397FE48A")
                     .IsUnique();
 
                 entity.Property(e => e.CreatedBy)
